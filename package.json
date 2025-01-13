@@ -1,0 +1,56 @@
+{
+  "name": "lamina",
+  "displayName": "lamina",
+  "description": "Lamina is a VS Code extension that provides a chat interface to interact with Ollama models",
+  "version": "0.0.1",
+  "publisher": "HassanBahati",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "lamina.openChat",
+        "title": "Open Lamina Chat"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Lamina Settings",
+      "properties": {
+        "lamina.modelName": {
+          "type": "string",
+          "default": "llama3.1:8b",
+          "description": "The name of the Ollama model to use for chat."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.96.0",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.16.0",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "ollama": "^0.5.11"
+  }
+}
