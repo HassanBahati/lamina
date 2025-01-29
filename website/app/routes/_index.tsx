@@ -2,8 +2,12 @@ import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "Lamina" },
+    {
+      name: "Welcome to Lamina!",
+      content:
+        "Lamina is a VS Code extension that provides a chat interface to interact with Ollama models, offering an easy way to query AI models like llama3.1 and get responses directly inside your code editor!",
+    },
   ];
 };
 
